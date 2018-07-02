@@ -9,6 +9,12 @@ if (!fs.existsSync(TMP_PATH)){
   fs.mkdirSync(TMP_PATH)
 }
 
+
+////
+/// Make sure to call
+///
+/// await page._client.send('Page.setDownloadBehavior', {behavior: 'allow', downloadPath: TMP_PATH});
+////
 function getFileNameFromHeader(dispo) {
   var temp = dispo
   var idx = temp.indexOf("filename=")
